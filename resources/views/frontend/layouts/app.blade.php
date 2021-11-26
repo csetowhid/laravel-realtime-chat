@@ -23,7 +23,7 @@
 <body class="hold-transition light-skin theme-primary fixed sidebar-collapse">
 	
 <div class="wrapper">
-	<div id="loader"></div>
+	@yield('loader')
 	
   <header class="main-header">
 	<div class="d-flex align-items-center logo-box justify-content-start">	
@@ -85,7 +85,7 @@
 	<!-- Vendor JS -->
 	<script src="{{asset('frontend/js/vendors.min.js')}}"></script>
 	<script src="{{asset('frontend/js/pages/chat-popup.js')}}"></script>
-    <script src="../assets/icons/feather-icons/feather.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
 		
 	<!-- Chat-Bot Admin App -->
 	<script src="{{asset('frontend/js/template.js')}}"></script>

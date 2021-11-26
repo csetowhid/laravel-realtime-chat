@@ -1,9 +1,10 @@
 @extends('frontend.layouts.app')
+@section('loader')
+<div id="loader"></div>
+@endsection
 @section('content')
 <section class="content">
-			
 	<div class="row">
-
 		<div class="col-lg-8">
 			<div class="box text-center">
 				<h1 class="m-2">Free chat rooms, Online chat rooms for free</h1>
@@ -45,9 +46,6 @@
 				</div>
 			</div>
 		</div>
-
-		  
-
 		</div>
 
 </section>

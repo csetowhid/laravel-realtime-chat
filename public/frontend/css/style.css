@@ -78,20 +78,18 @@ Waves
 /*Body*/
 @import url(color_theme.css);
 @import url(style_rtl.css);
-/* @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css); */
-@import url(../icons/font-awesome/css/font-awesome.css);
-@import url(../icons/Ionicons/css/ionicons.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css);
+/* @import url(../icons/Ionicons/css/ionicons.css);
 @import url(../icons/themify-icons/themify-icons.css);
 @import url(../icons/linea-icons/linea.css);
-@import url(../icons/glyphicons/glyphicon.css);
-@import url(../icons/flag-icon-css/css/flag-icon.css);
-/* @import url(../icons/material-design-iconic-font/css/materialdesignicons.css); */
+@import url(../icons/glyphicons/glyphicon.css); */
 @import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/6.5.95/css/materialdesignicons.css);
-@import url(../icons/simple-line-icons/css/simple-line-icons.css);
+/* @import url(../icons/simple-line-icons/css/simple-line-icons.css);
 @import url(../icons/cryptocoins-master/cryptocoins.css);
 @import url(../icons/weather-icons/css/weather-icons.min.css);
 @import url(../icons/iconsmind/style.css);
-@import url(../icons/icomoon/style.css);
+@import url(../icons/icomoon/style.css); */
 @import url(../vendor_components/animate/animate.css);
 html {
   height: 100%;
@@ -22182,7 +22180,6 @@ body .main-header .navbar .nav > li.search-box > a:hover, body .main-header .nav
 
 .chat-box-body {
   position: relative;
-  height: 370px;
   height: auto;
   border-bottom: 1px solid #ebedf3;
   border-top: 1px solid #ebedf3;
