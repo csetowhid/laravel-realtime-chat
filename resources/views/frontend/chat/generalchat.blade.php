@@ -49,7 +49,8 @@
                 <div class="d-lg-flex d-block justify-content-between align-items-center w-p100">
                   <div class="media-body mb-lg-0 mb-20">
                     <p class="fs-16">
-                      <a class="hover-primary" href="#"><strong>Theron Trump</strong></a>
+                      {{-- <a class="hover-primary" href="#"><strong>Theron Trump</strong></a> --}}
+                      <h3 id="showUsername"></h3>
                     </p>
                   </div>
                   <div>
@@ -199,6 +200,7 @@
               }else{
                 $('#modal').removeClass('show');
                 // alert(username.value);
+                document.getElementById("showUsername").innerHTML = username.value;
               }
               // let username = document.getElementById('username').value;
                 // $('#modal').removeClass('show');
