@@ -1,29 +1,4 @@
 @extends('frontend.layouts.app')
-{{-- @section('styles')
-<style>
-  #messages{
-    flex: 1 1 0%;
-    overflow: scroll;
-    padding: 16px;
-}
-
-.message{
-    display: block;
-    width: 100%;
-    border-radius: 99px;
-    background-color: #fff;
-    padding: 8px 16px;
-    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
-    font-weight: 400;
-    margin-bottom: 16px;
-}
-
-.message strong{
-    color: #8C38FF;
-    font-weight: 600;
-}
-</style>
-@endsection --}}
 @section('chatname')
     General Chat
 @endsection
@@ -45,7 +20,7 @@
                 <div class="form-group">
                   <h5>Enter Username</h5>
                   <div class="controls">
-                    <input type="text" name="username" id="username" class="form-control" required>
+                    <input type="text" name="username" id="username" class="form-control" required autocomplete="off">
                     <br>
                     <span class="d-none text-danger" id="validate">Please Enter a Username</span>
                   </div>
@@ -85,26 +60,9 @@
               {{-- <div id="messages"></div> --}}
 
               <div class="box-body">
-                <div class="chat-box-one2">
-                  <div id="ms_message" class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
-                  </div>
-
-                  {{-- <div class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
-                    <div class="position-absolute pt-1 pe-5 r-0">
-                      <span class="text-muted">09:25</span>
-                    </div>
-                    <div class="card-body">
-                      <div class="d-flex flex-row pb-2">
-                          <p class="ms_user mb-0 fs-16 text-dark"></p>
-                      </div>
-                      <div class="chat-text-left ps-10">
-                        <p class="mb-0"></p>
-                      </div>
-                    </div>
-                    </div> --}}
-                  							  
-                  <div class="clearfix"></div>
-                  {{-- <div class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
+                <div id="ms_message" class="chat-box-one2">
+                  {{-- <div class="clearfix"></div>
+                  <div class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
                     <div class="position-absolute pt-1 pe-5 r-0">
                       <span class="text-muted">09:25</span>
                     </div>
@@ -128,7 +86,7 @@
               <div class="box-footer">
                 <form id="message_form">
                 <div class="d-md-flex d-block justify-content-between align-items-center">
-                    <input class="form-control b-0 py-10" type="text" id="message_input" placeholder="Say something...">
+                    <input class="form-control b-0 py-10" type="text" id="message_input" placeholder="Say something..." autocomplete="off">
                   <div class="d-flex justify-content-between align-items-center mt-md-0 mt-30">
                     <button type="submit" class="waves-effect waves-circle btn btn-circle btn-primary">
                       <i class="mdi mdi-send"></i>
@@ -187,8 +145,6 @@
 </section>
 @endsection
 @section('script')
-{{-- <script src="{{asset('frontend/custom.js')}}"></script> --}}
-{{-- <script src="../../js/custom.js"></script> --}}
 <script>
   function closeButton(){
         if(username.value == ''){

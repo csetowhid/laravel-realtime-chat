@@ -26,6 +26,5 @@ Route::get('/general-chat',[ChatController::class, 'generalChat'])->name('genera
 
 Route::post('/send-message', function (Request $request){
     event(new Message($request->input('username'), $request->input('message')));
-    // return ["success" => true];
-    return [$request->input('username'), $request->input('message')];
+    return ["success" => true];
 });

@@ -2076,8 +2076,7 @@ var username = document.getElementById("username"); // function closeButton(){
 // }
 
 var message_input = document.getElementById("message_input");
-var message_form = document.getElementById("message_form"); // const ms_user = document.getElementById("ms_user");
-
+var message_form = document.getElementById("message_form");
 var ms_message = document.getElementById("ms_message");
 message_form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -2095,10 +2094,10 @@ message_form.addEventListener('submit', function (e) {
     }
   };
   axios(options);
+  message_form.reset();
 });
 window.Echo.channel('chat').listen('.message', function (e) {
-  ms_message.innerHTML += '<div class="position-absolute pt-1 pe-5 r-0"><span class="text-muted">09:25</span></div><div class="card-body"><div class="d-flex flex-row pb-2"><p class="mb-0 fs-16 text-dark">' + e.username + '</p></div><div class="chat-text-left ps-10"><p class="mb-0">' + e.message + '</p></div></div><div class="clearfix"></div>';
-  console.log(e.message);
+  ms_message.innerHTML += '<div class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80"><div class="position-absolute pt-1 pe-5 r-0"><span class="text-muted">09:25</span></div><div class="card-body"><div class="d-flex flex-row pb-2"><p class="mb-0 fs-16 text-dark">' + e.username + '</p></div><div class="chat-text-left ps-10"><p class="mb-0">' + e.message + '</p></div></div></div><div class="clearfix">';
 });
 
 /***/ }),

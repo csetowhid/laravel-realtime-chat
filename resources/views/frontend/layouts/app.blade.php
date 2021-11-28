@@ -17,8 +17,6 @@
 	<!-- Style-->  
 	<link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('frontend/css/skin_color.css')}}">
-	@yield('styles')
-     
   </head>
 
 <body class="hold-transition light-skin theme-primary fixed sidebar-collapse">
