@@ -1,4 +1,29 @@
 @extends('frontend.layouts.app')
+{{-- @section('styles')
+<style>
+  #messages{
+    flex: 1 1 0%;
+    overflow: scroll;
+    padding: 16px;
+}
+
+.message{
+    display: block;
+    width: 100%;
+    border-radius: 99px;
+    background-color: #fff;
+    padding: 8px 16px;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.message strong{
+    color: #8C38FF;
+    font-weight: 600;
+}
+</style>
+@endsection --}}
 @section('chatname')
     General Chat
 @endsection
@@ -48,10 +73,8 @@
                 </a>
                 <div class="d-lg-flex d-block justify-content-between align-items-center w-p100">
                   <div class="media-body mb-lg-0 mb-20">
-                    <p class="fs-16">
                       {{-- <a class="hover-primary" href="#"><strong>Theron Trump</strong></a> --}}
                       <h3 id="showUsername"></h3>
-                    </p>
                   </div>
                   <div>
                   </div>
@@ -59,54 +82,29 @@
               </div>             
               </div>
 
+              {{-- <div id="messages"></div> --}}
+
               <div class="box-body">
-                {{-- <div class="chat-box-one">
-                  <div class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
-                  <div class="position-absolute pt-1 pe-5 r-0">
-                    <span class="text-muted">09:25</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex flex-row pb-2">
-                      <div class="d-flex flex-grow-1">
-                        <div class="m-2 ps-0 align-self-center d-flex flex-column flex-lg-row justify-content-between">
-                          <div>
-                            <p class="mb-0 fs-16 text-dark">Sarah Kortney</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="chat-text-left ps-10">
-                      <p class="mb-0">What do you think about our plans for this product launch? </p>
-                    </div>
-                  </div>
-                  </div>	  
-                  <div class="clearfix"></div>
-                  
-                </div> --}}
                 <div class="chat-box-one2">
-                  <div class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
+                  <div id="ms_message" class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
+                  </div>
+
+                  {{-- <div class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
                     <div class="position-absolute pt-1 pe-5 r-0">
                       <span class="text-muted">09:25</span>
                     </div>
                     <div class="card-body">
                       <div class="d-flex flex-row pb-2">
-                        <div class="d-flex flex-grow-1">
-                          <div class="m-2 ps-0 align-self-center d-flex flex-column flex-lg-row justify-content-between">
-                            <div>
-                              <p class="mb-0 fs-16 text-dark">Sarah Kortney</p>
-                            </div>
-                          </div>
-                        </div>
+                          <p class="ms_user mb-0 fs-16 text-dark"></p>
                       </div>
                       <div class="chat-text-left ps-10">
-                        <p class="mb-0">What do you think about our plans for this product launch? </p>
+                        <p class="mb-0"></p>
                       </div>
                     </div>
-                    </div>
+                    </div> --}}
                   							  
-                  
                   <div class="clearfix"></div>
-                  <div class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
+                  {{-- <div class="card d-inline-block mb-3 float-start me-5 no-shadow bg-lighter max-w-p80">
                     <div class="position-absolute pt-1 pe-5 r-0">
                       <span class="text-muted">09:25</span>
                     </div>
@@ -124,18 +122,20 @@
                         <p class="mb-0">What do you think about our plans for this product launch? </p>
                       </div>
                     </div>
-                    </div>
+                    </div> --}}
                 </div>
               </div>
               <div class="box-footer">
+                <form id="message_form">
                 <div class="d-md-flex d-block justify-content-between align-items-center">
-                  <input class="form-control b-0 py-10" type="text" placeholder="Say something...">
+                    <input class="form-control b-0 py-10" type="text" id="message_input" placeholder="Say something...">
                   <div class="d-flex justify-content-between align-items-center mt-md-0 mt-30">
-                    <button type="button" class="waves-effect waves-circle btn btn-circle btn-primary">
+                    <button type="submit" class="waves-effect waves-circle btn btn-circle btn-primary">
                       <i class="mdi mdi-send"></i>
                     </button>
                   </div>
                 </div>
+              </form>
               </div>
             </div>
       </div>
@@ -187,26 +187,18 @@
 </section>
 @endsection
 @section('script')
-    <script>
-        window.addEventListener('load', (event) => {
-            $('#modal').addClass('show');
-            });
-
-            let username = document.getElementById("username");
-            function closeButton(){
-              if(username.value == ''){
-                $('#validate').removeClass('d-none');
-                $('#validate').addClass('d-block');
-              }else{
-                $('#modal').removeClass('show');
-                // alert(username.value);
-                document.getElementById("showUsername").innerHTML = username.value;
-              }
-              // let username = document.getElementById('username').value;
-                // $('#modal').removeClass('show');
-                // alert(username);
-            }
-    </script>
-    
-    
+{{-- <script src="{{asset('frontend/custom.js')}}"></script> --}}
+{{-- <script src="../../js/custom.js"></script> --}}
+<script>
+  function closeButton(){
+        if(username.value == ''){
+        $('#validate').removeClass('d-none');
+        $('#validate').addClass('d-block');
+        }else{
+        $('#modal').removeClass('show');
+        document.getElementById("showUsername").innerHTML = username.value;
+        }
+    }
+</script>
+<script src="./js/app.js"></script>
 @endsection

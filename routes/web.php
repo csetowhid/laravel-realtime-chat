@@ -1,6 +1,8 @@
 <?php
 
+use App\Events\Message;
 use App\Http\Controllers\ChatController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +23,9 @@ Route::get('/', function () {
 });
 
 Route::get('/general-chat',[ChatController::class, 'generalChat'])->name('general.chat');
+
+Route::post('/send-message', function (Request $request){
+    event(new Message($request->input('username'), $request->input('message')));
+    // return ["success" => true];
+    return [$request->input('username'), $request->input('message')];
+});

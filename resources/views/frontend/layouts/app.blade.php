@@ -17,6 +17,7 @@
 	<!-- Style-->  
 	<link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('frontend/css/skin_color.css')}}">
+	@yield('styles')
      
   </head>
 
